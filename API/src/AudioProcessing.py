@@ -9,6 +9,7 @@ import time
 from os import environ
 from sys import exit
 from pydub import AudioSegment
+from VoiceAnalysis import Identify
 
 mysp=__import__("my-voice-analysis")
 
@@ -55,6 +56,6 @@ def download_file(url):
                 #if chunk: 
                 f.write(chunk)
     convert_ogg_to_wav(folder + local_filename, folder + local_filename + ".wav" )
-    detect_gender (folder, local_filename)
+    Identify (local_filename+ ".wav")
     return folder + local_filename
 
